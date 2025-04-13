@@ -21,9 +21,8 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: |
+        run: 
           npm install
-          npm init @eslint/config@latest
 
   lint:
     needs: setup
