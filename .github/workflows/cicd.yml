@@ -23,7 +23,6 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install
-          npm install -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 
   lint:
     needs: setup
