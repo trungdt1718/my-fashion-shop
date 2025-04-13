@@ -21,7 +21,8 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci
+        run: 
+          npm install
 
   lint:
     needs: setup
