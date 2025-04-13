@@ -17,13 +17,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '23.11.0'
+          node-version: ' 23.11.0'
           cache: 'npm'
 
       - name: Install Dependencies
-        run: |
-          npm install
-          npm init @eslint/config@latest
+        run: npm ci
 
   lint:
     needs: setup
@@ -35,8 +33,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '23.11.0'
+          node-version: ' 23.11.0'
           cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
 
       - name: Check ESLint
         run: npm run lint
@@ -51,8 +52,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '23.11.0'
+          node-version: ' 23.11.0'
           cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
         
       - name: Check Prettier
         run: npm run format
@@ -67,8 +71,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '23.11.0'
+          node-version: ' 23.11.0'
           cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
 
       - name: Run UI Tests
         run: npm run test
@@ -83,8 +90,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '23.11.0'
+          node-version: ' 23.11.0'
           cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
 
       - name: Build Node Project
         run: npm run build 
