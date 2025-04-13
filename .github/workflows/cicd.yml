@@ -18,10 +18,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '23.11.0'
-          cache: 'npm'  
+          cache: 'npm'
 
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm install
+          npm install -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 
   lint:
     needs: setup
@@ -37,7 +39,7 @@ jobs:
           cache: 'npm'
 
       - name: Check ESLint
-        run: npm run lint
+        run: npx eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0
 
   format:
     needs: lint
@@ -85,4 +87,4 @@ jobs:
           cache: 'npm'
 
       - name: Build Node Project
-        run: npm run build
+        run: npm run build 
